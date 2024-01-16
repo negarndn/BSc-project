@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Flask App - Result</title>
+    <style>
+        body {
+            background-color: #FFD700; /* Set background color to a cute orange (you can change it) */
+            font-family: 'Lalezar', 'Tahoma', 'Arial', sans-serif; /* Use Lalezar as the primary font */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'Lalezar';
+            src: url('fonts/Lalezar-Regular.ttf') format('truetype'); /* Adjust the path based on your project structure */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h1 {
+            color: #FF6347; /* Set heading color to a cute orange-red (you can change it) */
+        }
+
+        p {
+            color: #333; /* Set paragraph text color */
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #FF6347; /* Set link color to a cute orange-red (you can change it) */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1>
+    <p>Sentence: {{ sentence }}</p>
+    <p>Sparql Response: {{ sparql_response }}</p>
+    <a href="/">Back to Home</a>
+</body>
+</html>

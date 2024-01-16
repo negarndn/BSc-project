@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Flask App</title>
+    <style>
+        body {
+            background-color: #FFD700; /* Set background color to a cute orange (you can change it) */
+            font-family: 'Lalezar', 'Tahoma', 'Arial', sans-serif; /* Use Tahoma as the primary font */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        h1 {
+            color: #FF6347; /* Set heading color to a cute orange-red (you can change it) */
+            font-size: 50px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Lalezar', 'Tahoma', 'Arial', sans-serif; /* Use Tahoma as the primary font */
+            font-size: 20px;
+            color: #333333;
+
+
+        }
+
+        button {
+            background-color: #FF6347; /* Set button color to a cute orange-red (you can change it) */
+            color: #FFF;
+            padding: 10px 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Lalezar', 'Tahoma', 'Arial', sans-serif; /* Use Tahoma as the primary font */
+
+        }
+
+        button:hover {
+            background-color: #FF4500; /* Darker shade on hover (you can change it) */
+        }
+
+        .response {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .response label {
+            font-size: 20px;
+        }
+
+        .response p {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>سیستم پرسش و پاسخ سوالات ساده فارسی</h1>
+    <form action="/process_sentence" method="post">
+        <label for="sentence">سوال خود را وارد کنید</label>
+        <input required dir="rtl" type="text" name="sentence" value="{{ request.form['sentence'] if request.form['sentence'] }}" id="sentence" required >
+        <button type="submit">بپرس</button>
+<!--        <p>{{ sentence }}</p>-->
+        <p>{{ sparql_response }}</p>
+        <p id="sparqlResponse"></p>
+
+    </form>
+
+<!--    <script>-->
+<!--        function askQuestion() {-->
+<!--            var sentence = document.getElementById('sentence').value;-->
+
+<!--            // Assuming you have a JavaScript variable sparqlResponse available with the response-->
+<!--            var sparqlResponse = { sparql_response };-->
+
+<!--            // Display the response box and set the response text-->
+<!--            document.getElementById('responseBox').style.display = 'block';-->
+<!--            document.getElementById('res').style.display = 'block'-->
+<!--            document.getElementById('sparqlResponse').innerText = sparqlResponse;-->
+<!--        }-->
+
+
+<!--    </script>-->
+
+</body>
+</html>
